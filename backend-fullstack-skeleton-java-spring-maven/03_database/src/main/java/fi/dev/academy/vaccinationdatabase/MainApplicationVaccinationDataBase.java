@@ -30,10 +30,8 @@ public class MainApplicationVaccinationDataBase {
             System.out.println("User = " + user);
             System.out.println("Admin = " + admin);
 
-/*
             userRepository.save(admin);
             userRepository.save(user);
-*/
         };
     }
 
