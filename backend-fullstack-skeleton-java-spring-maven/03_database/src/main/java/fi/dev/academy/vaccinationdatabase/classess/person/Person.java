@@ -40,6 +40,9 @@ public class Person {
     private String familyName, givenName, name, nickname, telephone, email;
     private Boolean recordDeleted;
 
+    public Person() {
+        super();
+    }
 
     // TODO Remember to remove me
     // Just for testing with CommandLineRunner
