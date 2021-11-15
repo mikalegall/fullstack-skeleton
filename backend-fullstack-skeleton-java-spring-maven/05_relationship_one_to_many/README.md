@@ -35,3 +35,30 @@ DataBase management system PostgreSQL 11.12
     exit
 
 Note! Even though DataBase might use snake_convention after Hibernate handling do use camelCase with Java (Python uses snake_convention) because SpringData @Repository interface does not work with snake_convention
+
+<br>
+
+<hr>
+
+<br>
+
+This proof of concept ([POC](https://en.wikipedia.org/wiki/Proof_of_concept)) for FullStack skeleton is based on this [<i>Business Case</i>](https://web.archive.org/web/20210803084701/https://github.com/solita/vaccine-exercise-2021) exercise.
+
+<br>
+
+<hr>
+
+<br>
+
+Relational DataBase: [One-to-Many](https://techyowls.com/post/jpa-one-to-many)
+
+Relational DataBase: [Many-to-Many](https://www.baeldung.com/jpa-many-to-many)
+
+
+    #Confirm PostgreSQL relation @OneToMany
+    psql
+    SELECT * FROM public.orders;
+    
+    SELECT * FROM public.vaccinations;
+
+    exit
