@@ -1,35 +1,37 @@
 package fi.dev.academy.vaccinationdatabase;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import fi.dev.academy.vaccinationdatabase.classes.interfaces.IPersonDAO;
-import fi.dev.academy.vaccinationdatabase.classes.person.Person;
-import fi.dev.academy.vaccinationdatabase.classess.interfaces.IOrderDAO;
-import fi.dev.academy.vaccinationdatabase.classess.interfaces.IVaccinationDAO;
-import fi.dev.academy.vaccinationdatabase.classess.order.Order;
-import fi.dev.academy.vaccinationdatabase.classess.vaccination.Vaccination;
+import fi.dev.academy.vaccinationdatabase.common_components.utilities.SetUpDB;
+import fi.dev.academy.vaccinationdatabase.domain_class_pojo_orm.interfaces.IOrderDAO;
+import fi.dev.academy.vaccinationdatabase.domain_class_pojo_orm.interfaces.IVaccinationDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import java.util.List;
-
 @SpringBootApplication(scanBasePackages = {"fi.dev.academy.vaccinationdatabase"})
 public class MainApplicationVaccinationDataBase {
 
+    /*    @Autowired
+        private IOrderDAO orderRepository;
+    */
     @Autowired
-    private IOrderDAO orderRepository;
+    private SetUpDB setUpDB;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws JsonProcessingException {
         SpringApplication.run(MainApplicationVaccinationDataBase.class, args);
     }
 
     // CommandLineRunner will be executed right after the startup so it is a good place to
     // do some initial setups
     @Bean
-    public CommandLineRunner doSomeSetUp(IPersonDAO userRepository, IVaccinationDAO vaccinationRepository) {
+//    public CommandLineRunner doSomeSetUp(IPersonDAO userRepository, IVaccinationDAO vaccinationRepository) {
+    public CommandLineRunner doSomeSetUp() {
         return (args) -> {
             System.out.println("This is the place where to init e.g. DataBase, generate test users for Dev etc.");
+            setUpDB.initDB();
 /*
             Person admin = new Person("admin", "$2a$10$0MMwY.IQqpsVc1jC8u7IJ.2rT8b0Cd3b3sfIBGV2zfgnPGtT4r0.C", "ROLE_ADMIN");
             admin.setRole("ROLE_ADMIN");
@@ -45,6 +47,7 @@ public class MainApplicationVaccinationDataBase {
             userRepository.save(user);
 */
 
+/*
             Order order = new Order();
             order.setHealthCareDistrict("TAYS");
             order.setInjections(4);
@@ -87,7 +90,7 @@ public class MainApplicationVaccinationDataBase {
             // Vaccination ampule for doses: orderedAmpuleBottleId = Vaccination.sourceBottle
             vaccination7728.setWhichOrderIncludesTheseVaccinationsLinked(linkedOrder.get(0));
             vaccinationRepository.save(vaccination7728);
-
+*/
         };
     }
 
