@@ -1,6 +1,6 @@
-package fi.dev.academy.vaccinationdatabase.classess.interfaces;
+package fi.dev.academy.vaccinationdatabase.domain_class_pojo_orm.interfaces;
 
-import fi.dev.academy.vaccinationdatabase.classess.order.Order;
+import fi.dev.academy.vaccinationdatabase.domain_class_pojo_orm.order.Order;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

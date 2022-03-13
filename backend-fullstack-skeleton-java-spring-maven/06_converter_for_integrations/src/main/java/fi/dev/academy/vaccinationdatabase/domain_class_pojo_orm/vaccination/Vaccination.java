@@ -1,9 +1,9 @@
-package fi.dev.academy.vaccinationdatabase.classess.vaccination;
+package fi.dev.academy.vaccinationdatabase.domain_class_pojo_orm.vaccination;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import fi.dev.academy.vaccinationdatabase.classess.order.Order;
+import fi.dev.academy.vaccinationdatabase.domain_class_pojo_orm.order.Order;
 import lombok.Data;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;

@@ -1,6 +1,6 @@
-package fi.dev.academy.vaccinationdatabase.classess.interfaces;
+package fi.dev.academy.vaccinationdatabase.domain_class_pojo_orm.interfaces;
 
-import fi.dev.academy.vaccinationdatabase.classess.vaccination.Vaccination;
+import fi.dev.academy.vaccinationdatabase.domain_class_pojo_orm.vaccination.Vaccination;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
