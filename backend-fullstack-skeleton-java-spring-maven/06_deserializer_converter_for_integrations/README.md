@@ -62,3 +62,9 @@ Relational DataBase: [Many-to-Many](https://www.baeldung.com/jpa-many-to-many)
     SELECT * FROM public.vaccinations;
 
     exit
+
+Because of relation pay attention e.g cascade ("progressive rolling")
+
+    DROP TABLE public.orders CASCADE;
+    DROP TABLE public.vaccinations CASCADE;
+    DROP SEQUENCE public.hibernate_sequence;
