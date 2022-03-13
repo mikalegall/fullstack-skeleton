@@ -1,4 +1,4 @@
-package fi.dev.academy.vaccinationdatabase.classess.interfaces;
+package fi.dev.academy.vaccinationdatabase.domain_class_pojo_orm.interfaces;
 
 import fi.dev.academy.vaccinationdatabase.classes.interfaces.IPersonDAO;
 import fi.dev.academy.vaccinationdatabase.classes.person.Person;
