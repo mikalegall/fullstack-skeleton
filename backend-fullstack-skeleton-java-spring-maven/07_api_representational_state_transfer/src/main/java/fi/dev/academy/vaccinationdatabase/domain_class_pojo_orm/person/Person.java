@@ -1,11 +1,11 @@
-package fi.dev.academy.vaccinationdatabase.classes.person;
+package fi.dev.academy.vaccinationdatabase.domain_class_pojo_orm.person;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
+//import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+//import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 public class Person {
 
     // Maven dependency: spring-boot-starter-security
-    public static final PasswordEncoder PASSWORD_ENCODER = new BCryptPasswordEncoder();
+//    public static final PasswordEncoder PASSWORD_ENCODER = new BCryptPasswordEncoder();
 
     @OnDelete(action = OnDeleteAction.NO_ACTION)
     @Id
@@ -53,7 +53,7 @@ public class Person {
     }
 
     public void setPassword(String password) {
-        this.passwordHash = PASSWORD_ENCODER.encode(password);
+        //this.passwordHash = PASSWORD_ENCODER.encode(password);
     }
 
 
