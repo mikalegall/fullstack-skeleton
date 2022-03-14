@@ -22,9 +22,9 @@ import java.util.List;
  https://www.javatpoint.com/pojo-in-java
 */
 
-@Entity
+@Entity // JPA: ORM map into DB table
 @Table(name = "ORDERS", schema = "PUBLIC")
-@Data
+@Data // Lombok for getters and setters
 public class Order {
 
     @OnDelete(action = OnDeleteAction.NO_ACTION)
