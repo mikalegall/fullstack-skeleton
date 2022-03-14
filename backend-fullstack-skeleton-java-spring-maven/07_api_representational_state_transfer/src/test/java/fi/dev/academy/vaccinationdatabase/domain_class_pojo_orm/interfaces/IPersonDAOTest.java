@@ -1,7 +1,7 @@
 package fi.dev.academy.vaccinationdatabase.domain_class_pojo_orm.interfaces;
 
-import fi.dev.academy.vaccinationdatabase.classes.interfaces.IPersonDAO;
-import fi.dev.academy.vaccinationdatabase.classes.person.Person;
+import fi.dev.academy.vaccinationdatabase.domain_class_pojo_orm.interfaces.IPersonDAO;
+import fi.dev.academy.vaccinationdatabase.domain_class_pojo_orm.person.Person;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
