@@ -2,6 +2,7 @@ package fi.dev.academy.vaccinationdatabase.common.utilities;
 
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import fi.dev.academy.vaccinationdatabase.common.basemodel.Status;
 import fi.dev.academy.vaccinationdatabase.domain_class_pojo_orm.interfaces.IOrderDAO;
 import fi.dev.academy.vaccinationdatabase.domain_class_pojo_orm.interfaces.IVaccinationDAO;
 import fi.dev.academy.vaccinationdatabase.domain_class_pojo_orm.order.Order;
@@ -35,6 +36,7 @@ public class SetUpDB {
         if (orders != null) {
             log.info("Start to save order ORMs from JSON order files into PostreSQL");
             for (Order order : orders) {
+                order.setStatus(Status.COMPLETED);
                 orderRepository.save(order);
             }
             log.info("Ready, all order ORMs saved into PostreSQL");
@@ -56,12 +58,15 @@ public class SetUpDB {
                 if (linkedOrder != null) {
                     // In this vaccination set the Order-object where this vaccination belongs to)
                     vaccination.setWhichOrderIncludesTheseVaccinationsLinked(linkedOrder.get(0));
+                    vaccination.setStatus(Status.COMPLETED);
+                    vaccinationRepository.save(vaccination);
                 } else {
                     Order tempOrder = new Order();
                     tempOrder.setResponsiblePerson("No order for this 'Ordered Ampule Bottle Id' aka 'Source Bottle'");
                     vaccination.setWhichOrderIncludesTheseVaccinationsLinked(tempOrder);
+                    vaccination.setStatus(Status.COMPLETED);
+                    vaccinationRepository.save(vaccination);
                 }
-                vaccinationRepository.save(vaccination);
 
             }
             log.info("Ready, all vaccination ORMs saved into PostreSQL");

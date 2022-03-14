@@ -56,6 +56,19 @@
                     <artifactId>spring-boot-starter-security</artifactId>
                 </dependency>
         -->
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-hateoas</artifactId>
+        </dependency>
+
+        <!-- application properties: 'spring.data.rest.base-path=/my_api_name' -->
+        <!--<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-rest</artifactId>
+        </dependency> -->
+        <!--spring-boot-starter-data-rest with @JsonIgnoreProperties messes up Swaggers @OneToMany prettified display -->
+
     </dependencies>
 
     <build>

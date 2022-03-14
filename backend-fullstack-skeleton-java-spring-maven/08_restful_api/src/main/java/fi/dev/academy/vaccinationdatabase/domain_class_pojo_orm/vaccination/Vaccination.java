@@ -3,6 +3,7 @@ package fi.dev.academy.vaccinationdatabase.domain_class_pojo_orm.vaccination;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import fi.dev.academy.vaccinationdatabase.common.basemodel.Status;
 import fi.dev.academy.vaccinationdatabase.domain_class_pojo_orm.order.Order;
 import lombok.Data;
 import org.hibernate.annotations.OnDelete;
@@ -24,6 +25,8 @@ public class Vaccination {
     @Version
     @JsonIgnore
     private Long version;
+
+    private Status status;
 
     private String sourceBottle; // Order.orderedAmpuleBottleId
     private String vaccinationId, gender;
