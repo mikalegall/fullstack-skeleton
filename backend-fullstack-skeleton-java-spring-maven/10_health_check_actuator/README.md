@@ -68,3 +68,7 @@ Because of relation pay attention e.g cascade ("progressive rolling")
     DROP TABLE public.orders CASCADE;
     DROP TABLE public.vaccinations CASCADE;
     DROP SEQUENCE public.hibernate_sequence;
+<br>
+BackEnd HealthCheck (Ops: <b>Note</b>, endpoint e.g. for Docker)
+<br>
+http://localhost:8080/actuator/health/
